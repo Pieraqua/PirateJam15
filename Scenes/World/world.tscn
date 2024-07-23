@@ -1,0 +1,46 @@
+[gd_scene load_steps=10 format=3 uid="uid://qgexi72wjyvk"]
+
+[ext_resource type="Script" path="res://Scenes/World/world.gd" id="1_j4v7e"]
+[ext_resource type="PackedScene" uid="uid://c5sfsy5nf6w7p" path="res://Scenes/Player/player.tscn" id="2_306lx"]
+[ext_resource type="PackedScene" uid="uid://dbgjahx4mpp44" path="res://Scenes/HUD/hud.tscn" id="3_g6avp"]
+[ext_resource type="PackedScene" uid="uid://dwfpyjjrmv7nl" path="res://Scenes/Tree/tree.tscn" id="4_6swax"]
+[ext_resource type="PackedScene" uid="uid://cyph0wbc5nrlk" path="res://Scenes/Tree/lamp.tscn" id="5_iqwj6"]
+[ext_resource type="Script" path="res://Scenes/Tree/lamp.gd" id="6_3xocr"]
+[ext_resource type="Script" path="res://Scenes/World/Alchemist.gd" id="6_kaqa7"]
+[ext_resource type="Script" path="res://Scenes/World/FireballKillZone.gd" id="7_pn5f4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ry6xe"]
+size = Vector2(1328, 68)
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_j4v7e")
+
+[node name="Player" parent="." instance=ExtResource("2_306lx")]
+unique_name_in_owner = true
+
+[node name="HUD" parent="." instance=ExtResource("3_g6avp")]
+
+[node name="Tree" parent="." instance=ExtResource("4_6swax")]
+position = Vector2(640, 432)
+
+[node name="Lamp" parent="." instance=ExtResource("5_iqwj6")]
+position = Vector2(641, 4)
+script = ExtResource("6_3xocr")
+
+[node name="Alchemist" type="Node2D" parent="."]
+script = ExtResource("6_kaqa7")
+
+[node name="PotionThrowTimer" type="Timer" parent="Alchemist"]
+unique_name_in_owner = true
+
+[node name="FireballKillZone" type="Area2D" parent="."]
+position = Vector2(0, 670)
+script = ExtResource("7_pn5f4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FireballKillZone"]
+position = Vector2(630, 86)
+shape = SubResource("RectangleShape2D_ry6xe")
+
+[connection signal="area_entered" from="FireballKillZone" to="FireballKillZone" method="_on_area_entered"]
+[connection signal="body_entered" from="FireballKillZone" to="FireballKillZone" method="_on_body_entered"]
+[connection signal="game_over" from="FireballKillZone" to="." method="end_game"]

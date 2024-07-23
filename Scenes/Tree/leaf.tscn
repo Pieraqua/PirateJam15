@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://imo4ci7bq5dn"]
+
+[ext_resource type="OccluderPolygon2D" uid="uid://baobk71c0e8ue" path="res://Scenes/Tree/leaf_occluder.tres" id="1_gjrpr"]
+[ext_resource type="Texture2D" uid="uid://k0dqka5ahb1w" path="res://Sprites/spritesheet.png" id="2_by01o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ry52y"]
+size = Vector2(100, 10)
+
+[node name="Leaf" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_ry52y")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="StaticBody2D"]
+occluder = ExtResource("1_gjrpr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-6, -9)
+rotation = -0.364701
+scale = Vector2(0.61, 0.61)
+texture = ExtResource("2_by01o")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(0, 200, 200, 200)

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5sfsy5nf6w7p"]
+
+[ext_resource type="Script" path="res://Scenes/Player/Player.gd" id="1_d0k04"]
+[ext_resource type="SpriteFrames" uid="uid://cl4qxef8xvf3r" path="res://Scenes/Player/player_sprite_frames.tres" id="2_1kj4y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_388gu"]
+radius = 12.0416
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+position = Vector2(755, 522)
+script = ExtResource("1_d0k04")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -1)
+scale = Vector2(0.15, 0.15)
+sprite_frames = ExtResource("2_1kj4y")
+animation = &"walking"
+frame = 1
+frame_progress = 0.283054
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_388gu")

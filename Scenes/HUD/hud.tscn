@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbgjahx4mpp44"]
+
+[ext_resource type="Script" path="res://Scenes/HUD/HUD.gd" id="1_q24je"]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q24je")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TopDisplay" type="PanelContainer" parent="CanvasLayer"]
+custom_minimum_size = Vector2(100, 50)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+
+[node name="PointsLabel" type="Label" parent="CanvasLayer/TopDisplay"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Points: 0"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,115 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwfpyjjrmv7nl"]
+
+[ext_resource type="PackedScene" uid="uid://imo4ci7bq5dn" path="res://Scenes/Tree/leaf.tscn" id="1_rg3wh"]
+[ext_resource type="Texture2D" uid="uid://k0dqka5ahb1w" path="res://Sprites/spritesheet.png" id="2_5es4a"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mdpvw"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_oyxfa"]
+normal = Vector2(-1, 0)
+
+[node name="Tree" type="Node2D"]
+z_index = -1
+position = Vector2(577, 372)
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(0, 648)
+
+[node name="LeftWall" type="CollisionShape2D" parent="Floor"]
+position = Vector2(-640, -470)
+shape = SubResource("WorldBoundaryShape2D_mdpvw")
+
+[node name="RightWall" type="CollisionShape2D" parent="Floor"]
+position = Vector2(640, -472)
+shape = SubResource("WorldBoundaryShape2D_oyxfa")
+
+[node name="TreeTrunk" type="Node2D" parent="."]
+position = Vector2(1, -40)
+
+[node name="TreeTrunk" type="Sprite2D" parent="TreeTrunk"]
+position = Vector2(-15, -59)
+texture = ExtResource("2_5es4a")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(0, 400, 200, 200)
+
+[node name="TreeTrunk2" type="Sprite2D" parent="TreeTrunk"]
+position = Vector2(10, 63)
+texture = ExtResource("2_5es4a")
+region_enabled = true
+region_rect = Rect2(0, 400, 200, 200)
+
+[node name="TreeTrunk3" type="Sprite2D" parent="TreeTrunk"]
+position = Vector2(-21, 186)
+texture = ExtResource("2_5es4a")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(0, 400, 200, 200)
+
+[node name="TreeTrunk4" type="Sprite2D" parent="TreeTrunk"]
+position = Vector2(-2, 308)
+texture = ExtResource("2_5es4a")
+region_enabled = true
+region_rect = Rect2(0, 400, 200, 200)
+
+[node name="Leaves" type="Node2D" parent="."]
+position = Vector2(-585, -390)
+
+[node name="Leaf" parent="Leaves" instance=ExtResource("1_rg3wh")]
+position = Vector2(747, 600)
+rotation = -3.14159
+scale = Vector2(1, -1)
+
+[node name="Leaf2" parent="Leaves" instance=ExtResource("1_rg3wh")]
+position = Vector2(397, 623)
+
+[node name="Leaf3" parent="Leaves" instance=ExtResource("1_rg3wh")]
+position = Vector2(743, 443)
+rotation = -3.14159
+scale = Vector2(1, -1)
+
+[node name="Leaf4" parent="Leaves" instance=ExtResource("1_rg3wh")]
+position = Vector2(254, 536)
+
+[node name="Leaf5" parent="Leaves" instance=ExtResource("1_rg3wh")]
+position = Vector2(400, 449)
+
+[node name="Leaf6" parent="Leaves" instance=ExtResource("1_rg3wh")]
+position = Vector2(738, 310)
+rotation = -3.14159
+scale = Vector2(1, -1)
+
+[node name="Leaf7" parent="Leaves" instance=ExtResource("1_rg3wh")]
+position = Vector2(917, 372)
+rotation = -3.14159
+scale = Vector2(1, -1)
+
+[node name="Leaf8" parent="Leaves" instance=ExtResource("1_rg3wh")]
+position = Vector2(251, 390)
+
+[node name="Leaf9" parent="Leaves" instance=ExtResource("1_rg3wh")]
+position = Vector2(108, 620)
+
+[node name="Leaf10" parent="Leaves" instance=ExtResource("1_rg3wh")]
+position = Vector2(1088, 446)
+rotation = -3.14159
+scale = Vector2(1, -1)
+
+[node name="Leaf11" parent="Leaves" instance=ExtResource("1_rg3wh")]
+position = Vector2(100, 473)
+
+[node name="Leaf12" parent="Leaves" instance=ExtResource("1_rg3wh")]
+position = Vector2(106, 314)
+
+[node name="Leaf13" parent="Leaves" instance=ExtResource("1_rg3wh")]
+position = Vector2(412, 306)
+
+[node name="Leaf14" parent="Leaves" instance=ExtResource("1_rg3wh")]
+position = Vector2(1089, 300)
+
+[node name="Leaf15" parent="Leaves" instance=ExtResource("1_rg3wh")]
+position = Vector2(915, 521)
+
+[node name="Leaf16" parent="Leaves" instance=ExtResource("1_rg3wh")]
+position = Vector2(1071, 599)

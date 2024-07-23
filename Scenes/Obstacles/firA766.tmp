@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://dunqdbdnwoajr"]
+
+[ext_resource type="Texture2D" uid="uid://k0dqka5ahb1w" path="res://Sprites/spritesheet.png" id="1_xuvqw"]
+[ext_resource type="Script" path="res://Scenes/Obstacles/fireball.gd" id="1_yn7v8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhi6y"]
+atlas = ExtResource("1_xuvqw")
+region = Rect2(0, 600, 200, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_befye"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhi6y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qynd8"]
+radius = 17.0294
+
+[node name="Fireball" type="Area2D"]
+position = Vector2(689, 96)
+script = ExtResource("1_yn7v8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+z_index = 1
+scale = Vector2(0.355, 0.355)
+sprite_frames = SubResource("SpriteFrames_befye")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 15)
+shape = SubResource("CircleShape2D_qynd8")

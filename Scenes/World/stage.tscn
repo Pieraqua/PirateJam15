@@ -1,0 +1,21 @@
+[gd_scene load_steps=7 format=3 uid="uid://b1fbeuwqxq7l"]
+
+[ext_resource type="Script" path="res://Scenes/World/world.gd" id="1_b2qlj"]
+[ext_resource type="PackedScene" uid="uid://c5sfsy5nf6w7p" path="res://Scenes/Player/player.tscn" id="2_gbg85"]
+[ext_resource type="PackedScene" uid="uid://dbgjahx4mpp44" path="res://Scenes/HUD/hud.tscn" id="3_kcp56"]
+[ext_resource type="PackedScene" uid="uid://dwfpyjjrmv7nl" path="res://Scenes/Tree/tree.tscn" id="4_ce86k"]
+[ext_resource type="PackedScene" uid="uid://cyph0wbc5nrlk" path="res://Scenes/Tree/lamp.tscn" id="5_wxybj"]
+[ext_resource type="PackedScene" uid="uid://dunqdbdnwoajr" path="res://Scenes/Obstacles/fireball.tscn" id="6_rqcjr"]
+
+[node name="Stage" type="Node2D"]
+script = ExtResource("1_b2qlj")
+
+[node name="Player" parent="." instance=ExtResource("2_gbg85")]
+
+[node name="HUD" parent="." instance=ExtResource("3_kcp56")]
+
+[node name="Tree" parent="." instance=ExtResource("4_ce86k")]
+
+[node name="Lamp" parent="." instance=ExtResource("5_wxybj")]
+
+[node name="Fireball" parent="." instance=ExtResource("6_rqcjr")]

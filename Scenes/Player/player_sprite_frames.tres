@@ -1,0 +1,49 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://cl4qxef8xvf3r"]
+
+[ext_resource type="Texture2D" uid="uid://k0dqka5ahb1w" path="res://Sprites/spritesheet.png" id="1_m08gc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5u8r"]
+atlas = ExtResource("1_m08gc")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hk5li"]
+atlas = ExtResource("1_m08gc")
+region = Rect2(400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfgxq"]
+atlas = ExtResource("1_m08gc")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0tfsu"]
+atlas = ExtResource("1_m08gc")
+region = Rect2(200, 0, 200, 200)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g5u8r")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hk5li")
+}],
+"loop": true,
+"name": &"jumping",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfgxq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0tfsu")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]
